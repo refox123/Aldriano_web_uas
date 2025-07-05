@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+  overflow-x: hidden;
+  color: #fff;
+}
+
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.4);
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+  border-bottom: 2px solid #00ff1e;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 10px #00ff00;
+  }
+  50% {
+    text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+  }
+  100% {
+    text-shadow: 0 0 10px #00ff00;
+  }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+  transition: all 0.3s;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav-links a:hover {
+  color: #00ff00;
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00ff00;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+section {
+  padding: 100px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.home-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.home-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.home-content p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-image {
+  width: 50%;
+  margin-top: 0;
+  border: 5px solid #00ff00;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #00ff00;
+  transition: all 0.3s;
+}
+
+.home-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00ff00;
+}
+
+.home-image img {
+  width: 100%;
+  display: block;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #00ff00;
+  text-align: center;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.about-content {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 10px;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.hobbies-container,
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.hobby-item,
+.project-item {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #00ff00;
+  transition: all 0.3s;
+}
+
+.hobby-item:hover,
+.project-item:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 20px #00ff00;
+}
+
+.hobby-item h3,
+.project-item h3 {
+  color: #00ff00;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.hobby-image,
+.project-image {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid #00ff00;
+}
+
+.hobby-image img,
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.hobby-item:hover .hobby-image img,
+.project-item:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill-item {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #00ff00;
+  width: calc(33.333% - 20px);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.skill-item:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #00ff00;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00ff00;
+  color: #fff;
+  border-radius: 5px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+button {
+  background-color: #00ff00;
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  font-family: "Press Start 2P", cursive;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+button:hover {
+  background-color: #00cc00;
+  box-shadow: 0 0 20px #00ff00;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px 0;
+  text-align: center;
+  border-top: 2px solid #00ff00;
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .hobbies-container,
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-item {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .home-content h1 {
+    font-size: 36px;
+  }
+}
+
+@keyframes flipInY {
+  from {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipOutY {
+  from {
+    transform: perspective(400px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+
+.flip-in {
+  animation: flipInY 0.5s ease forwards;
+}
+
+.flip-out {
+  animation: flipOutY 0.5s ease forwards;
+}
+
+.card-face {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background: #3b82f6;
+  color: white;
+  font-size: 2rem;
+}
+
+.card-back {
+  background: #1e40af;
+}
+
+.card-back:hover {
+  background: #1e3a8a;
+}
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card .hidden {
+  display: none;
+}
+
+.matched {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(100%);
+}
